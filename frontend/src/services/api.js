@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance
 const api = axios.create({
-  baseURL: '/api', // Using Vite proxy in development, resolves to '/api' on host in production
+  baseURL: import.meta.env.VITE_API_URL || '/api', // Using Vite proxy in development, resolves to '/api' on host in production
   headers: {
     'Content-Type': 'application/json',
   },
